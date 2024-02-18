@@ -1,0 +1,599 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+input,
+select,
+li,
+a,
+option,
+button,
+td,
+th {
+    font-family: 'poppins';
+}
+
+.bg-black {
+    background-color: black;
+}
+
+.link-success {
+    color: #2bdf8b !important;
+}
+
+.main {
+    position: relative;
+}
+
+.dashboard-scroll {
+    height: 92vh;
+    overflow: hidden;
+}
+
+.navbar-light .navbar-toggler-icon {
+    background-image: url(../image/menu.png) !important;
+}
+
+.navbar-toggler:focus {
+    box-shadow: inherit !important;
+}
+
+.form-select:focus {
+    box-shadow: inherit !important;
+}
+
+input,
+.form-select {
+    background-color: #000000 !important;
+    border: none !important;
+    color: white !important;
+    text-transform: uppercase;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.mobile-header {
+    display: none;
+}
+
+/* header */
+a.dropdown-item:hover {
+    background-color: #212529 !important;
+}
+
+.dropdown-menu[data-bs-popper] {
+    left: -36% !important;
+}
+
+a.dropdown-item {
+    color: white !important;
+    text-align: center;
+}
+
+.dropdown-menu {
+    background: #000000 !important;
+}
+
+.nav-link .badge {
+    padding: 3px 4px;
+    margin: 0px 2px;
+}
+
+.navbar-light .navbar-nav .nav-link.active,
+.navbar-light .navbar-nav .show>.nav-link {
+    color: white !important;
+    font-family: 'poppins';
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: white !important;
+    font-family: 'poppins';
+}
+
+.navbar-collapse {
+    justify-content: end;
+}
+
+/* header */
+
+/* main */
+.chart_name span {
+    font-weight: 600;
+}
+
+.chart_name {
+    display: flex;
+}
+
+#chartLegend {
+    display: flex;
+}
+
+.trades_charts img {
+    width: 100%;
+}
+
+.noInfo {
+    color: white;
+    font-family: 'poppins';
+    font-size: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 400px;
+}
+
+.order-head h4 {
+    color: white;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 300;
+}
+
+.table-head h4 {
+    color: white;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 300;
+    margin-bottom: 0;
+}
+
+.select_type {
+    width: 100%;
+    padding: 0 7px 0px 0px;
+    padding-bottom: 8px;
+}
+
+.order-board {
+    display: flex;
+}
+
+.order-board button {
+    width: 100%;
+}
+
+.main-order {
+    /* border: 1px solid white; */
+    padding-bottom: 8px;
+    padding-top: 9px;
+    align-items: center;
+    display: grid;
+}
+
+.option_chain table td,
+.option_chain table th {
+    color: white;
+    text-align: center;
+}
+
+.option_table_adjust tr td:hover {
+    background: black;
+}
+
+.atm {
+    background: #05367f;
+}
+
+.option_chain {
+    position: relative;
+    margin-bottom: 5px !important;
+}
+
+table {
+    caption-side: bottom;
+    border-collapse: collapse;
+}
+
+.oc_buy\&sell div {
+    padding: 0px 18px;
+}
+
+.oc_buy\&sell {
+    display: flex;
+    position: absolute;
+    z-index: 1;
+    top: 50.5%;
+    left: 4%;
+}
+
+.oc_buy\&sell div {
+    padding: 0px 15px;
+    margin: 0 7px;
+}
+
+.table-head {
+    display: flex;
+    align-items: center;
+}
+
+.table-head div {
+    width: 100%;
+}
+
+.option_table_adjust th {
+    color: black !important;
+    font-weight: 500;
+    position: sticky;
+    top: -1px;
+    z-index: 2;
+    vertical-align: middle;
+    background-color: white !important;
+    white-space: nowrap;
+}
+
+.option_chain {
+    height: 61vh;
+    overflow-x: auto;
+}
+
+.option_table_adjust {
+    margin-top: 10px;
+}
+
+.oc_input form {
+    padding: 0px 7px 0px 0px;
+}
+
+.input-group-text {
+    padding: 0 20px;
+    font-family: 'poppins';
+    font-weight: 500;
+}
+
+.form-control:focus {
+    box-shadow: inherit !important
+}
+
+.chart_name h4 {
+    color: white;
+    text-align: left;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.order-info div {
+    width: 100%;
+}
+
+.order-info {
+    display: flex;
+    align-items: center;
+}
+
+/* notification */
+.main-notification {
+    color: white;
+    position: fixed;
+    bottom: 25px;
+    width: 25%;
+    padding: 18px 21px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    background: #00337f;
+    justify-content: flex-start;
+    z-index: 100;
+}
+
+.notification-content p {
+    margin-bottom: 0;
+}
+
+
+
+.cross_button {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    font-size: 24px;
+    background: #100909;
+}
+
+.cross_button a i {
+    color: white;
+    padding: 0 4px;
+}
+
+
+
+/* order page */
+.inst_space {
+    width: 170% !important;
+}
+
+.order-main {
+    display: flex;
+    margin-top: 5px;
+}
+
+.order-list {
+    color: white;
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.order-list h6 {
+    margin-bottom: 0px;
+}
+
+.new-order {
+    padding: 13px 26px !important;
+    border: 2px solid;
+}
+
+.new-order .order-list .form-check-input {
+    border: 1px solid white !important;
+    border-radius: 10px;
+}
+
+.order-adjust i {
+    padding: 5px 9px !important;
+    border-radius: 50%;
+    margin: 0 6px;
+}
+
+.order-list-head h4 {
+    color: white;
+    text-align: center;
+    font-size: 25px;
+    font-weight: 300;
+    border-bottom: 1px solid #616161;
+    padding-bottom: 8px;
+}
+
+.order-list small {
+    font-size: 10px;
+}
+
+.order-list:last-child {
+    border-left: 1px solid #6a6a6a;
+}
+
+.order-list .link-success {
+    color: #2bdf8b;
+}
+
+.order-list .form-check {
+    display: flex;
+    justify-content: center;
+}
+
+.order-list span {
+    font-weight: 500;
+    font-family: 'Poppins';
+    letter-spacing: 0px;
+    padding: 8px 19px;
+}
+
+.new-order button {
+    text-transform: capitalize;
+    font-family: 'poppins';
+}
+
+.order-list button {
+    letter-spacing: 1px;
+    border-radius: 0px;
+    padding: 4px 22px;
+}
+
+.edit-order {
+    width: 50%;
+    position: fixed;
+    bottom: 0;
+    left: 25%;
+}
+
+.edit-order .main-order {
+    padding: 27px 13px;
+    border-radius: 10px;
+}
+
+
+/* position */
+.discord-input {
+    margin-bottom: 30px;
+}
+
+.order-adjust {
+    display: flex;
+    justify-content: center;
+}
+
+
+/* holdings */
+.holding_details {
+    color: white;
+}
+
+.holding_details .link-success {
+    color: #2bdf8b;
+}
+
+
+
+/* login */
+.login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 101%;
+}
+
+.login span {
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.login input {
+    background: #212529 !important;
+    width: 80%;
+    padding: 10px 15px;
+    border-radius: 7px;
+}
+
+.login-head h4 {
+    color: white;
+    font-family: 'Poppins';
+    font-weight: 300;
+    font-size: 40px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.login button {
+    width: 40%;
+    height: 50px;
+    font-family: poppins;
+    text-transform: uppercase;
+}
+
+.login button {
+    width: 100%;
+}
+
+.login {
+    background-image: url(../image/login-page.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.main-login {
+    background: rgb(24, 26, 27);
+    padding: 55px 35px;
+    border-radius: 25px;
+}
+
+.login-height {
+    height: 100vh;
+}
+
+#wrong {
+    color: white
+}
+
+.login-head {
+    color: white;
+    text-align: left;
+}
+
+.login-head p {
+    color: rgb(169, 161, 150);
+    margin-bottom: 30px;
+}
+
+.cryptorio-main-form input {
+    width: 100%;
+    background: rgba(10, 75, 172, 0.1) !important;
+    text-transform: capitalize;
+}
+
+.cryptorio-main-form label {
+    color: #c1c1b9;
+    font-size: 14px;
+    font-family: 'Poppins';
+    margin-bottom: 4px;
+}
+
+input[type="password"] {
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.password-toggle-btn {
+    position: relative;
+    margin-left: -40px;
+    cursor: pointer;
+}
+
+.password-toggle-btn i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-150%, -50%);
+}
+
+.login-btn {
+    background: #0a4bac !important;
+    border-color: #0a4bac !important;
+    text-transform: capitalize !important;
+}
+
+.login-btn2 {
+    text-transform: capitalize !important;
+}
+
+.trades_charts {
+    width: 100%;
+    height: 75.5vh;
+    /* Set an initial height */
+}
+
+/* limits */
+.limit-amounts {
+    color: white;
+    font-family: 'poppins';
+    display: flex;
+    align-items: center;
+    /* margin: 40px 0px; */
+    font-size: 20px;
+    text-transform: capitalize;
+}
+
+/* .limits {
+    height: 673px;
+    display: flex;
+    align-items: center;
+    background-image: url(../image/limit.jpg);
+    background-blend-mode: multiply;
+    background-color: #090909a3;
+} */
+
+.limits {
+    height: 673px;
+    display: flex;
+    align-items: center;
+    background-image: url(../image/limit.png);
+    background-blend-mode: multiply;
+    background-color: #090909a3;
+    background-position: center;
+    background-size: contain;
+}
+
+.limits .col-md-3 {
+    border: 1px solid white !important;
+    margin: 13px 42px;
+    padding: 10px 0;
+    display: grid;
+    justify-content: center;
+    text-align: center;
+}
+
+.limit_number span {
+    color: white;
+    font-family: 'poppins';
+    font-size: 30px;
+    font-weight: 800;
+}
