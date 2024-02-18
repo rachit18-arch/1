@@ -1089,7 +1089,7 @@ async function chart(instrumentName, instruementToken, instruementExchange) {
         ////// data feed
         const renderOHLC = (price, vol) => {
             const { open, high, low, close } = price;
-            let OHLC = '<span>O ' + open + ' H ' + high + ' L ' + low + ' C ' + close + ' OI ' + vol.value + '</span>'
+            let OHLC = '<span> O ' + open + ' H ' + high + ' L ' + low + ' C ' + close + ' OI ' + vol.value + '</span>'
             legend.children[1].innerHTML = OHLC;
         };
         let ohlcValues = null;
