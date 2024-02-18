@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trading || Positions</title>
+    <!-- css -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="bg-black">
+
+
+    <!-- header -->
+    <header class="bg-dark">
+        <div class="container">
+            <div class="row">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <div class="container-fluid">
+                        <form class="d-flex">
+                            <span class="input-group-text" id="basic-addon1">Index Name</span>
+                            <input type="text" class="form-control" placeholder="Enter Here....">
+                        </form>
+                        <!-- <a class="navbar-brand" href="#">
+                            <img src="https://dh.library.virginia.edu/system/files/styles/large/private/bootstrap-stack.png?itok=b_S8F9nO" alt="" width="30" height="24">
+                        </a> -->
+
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mb-2 mb-lg-0">
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="index.html">Dashboard</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="position.html">Positions</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="holdings.html">Holdings</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="order.html">
+                                        <span class="badge badge-light bg-danger d-none" id="rejected">0</span>Orders
+                                        <span class="badge badge-light bg-success d-none" id="completed">0</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        Profile
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <li><a class="dropdown-item" href="limits.html">Limits</a></li>
+                                        <li><a class="dropdown-item" onclick="logout()">Logout</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <!-- header -->
+
+    <!-- main -->
+    <div class="main bg-black">
+
+        <!-- for desktop -->
+
+        <section class="p-3 mt-5 bg-dark">
+            <div class="container-fluid">
+                <div id="noPositions" class="d-none order-list-head noInfo"> No Positions</div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="order-list-head">
+                            <h4 id="positionHeader">Positions</h4>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="discord-input">
+                            <form class="d-flex">
+                                <span class="input-group-text" id="basic-addon1">Discord</span>
+                                <input type="text" class="form-control" placeholder="Enter Here....">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <table>
+
+                        </table>
+                        <div class="order-main">
+                            <div class="order-list">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" onclick="selectAllButton(this)">
+                                </div>
+                            </div>
+                            <div class="order-list">
+                                <h6>Convert</h6>
+                            </div>
+                            <div class="order-list">
+                                <h6>Product</h6>
+                            </div>
+                            <div class="order-list inst_space">
+                                <h6>instrument</h6>
+                            </div>
+                            <div class="order-list">
+                                <h6>qty</h6>
+                            </div>
+                            <div class="order-list">
+                                <h6>Avg.</h6>
+                            </div>
+                            <div class="order-list">
+                                <h6>ltp</h6>
+                            </div>
+                            <div class="order-list on_mobile"">
+                                <h6>mtm</h6>
+                            </div>
+                            <div class=" order-list">
+                                <h6>P&L</h6>
+                            </div>
+                            <div class="order-list on_mobile">
+                                <h6>spread</h6>
+                            </div>
+                            <div class="order-list">
+                                <h6>% Chg.</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- new orders -->
+        <section>
+            <div class="container-fluid" id="positionsDiv">
+            </div>
+            <div class="container-fluid">
+                <!-- total pnl -->
+                <div class="row">
+                    <div class="order-main new-order">
+                        <div class="order-list">
+                            <div class="form-check">
+                                <button type="button" class="btn btn-danger d-none" id="exitSelectedButton"
+                                    onclick="exitSelectedButton()">exit</button>
+                            </div>
+                        </div>
+                        <div class="order-list">
+
+                        </div>
+                        <div class="order-list">
+
+                        </div>
+
+                        <div class="order-list inst_space">
+
+                        </div>
+                        <div class="order-list">
+
+                        </div>
+                        <div class="order-list">
+
+                        </div>
+
+                        <div class="order-list">
+                            <h6>Total</h6>
+                        </div>
+                        <div class="order-list">
+                            <h6 id="totalMTM">0.00</h6>
+                        </div>
+                        <div class="order-list">
+                            <h6 id="totalPNL">0.00</h6>
+                        </div>
+                        <div class="order-list">
+                            <h6></h6>
+                        </div>
+                        <div class="order-list on_mobile">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- for desktop -->
+
+
+        <!-- for mobile -->
+
+        <!-- for mobile -->
+
+
+
+
+
+
+
+
+
+
+        <!-- edit order panel  -->
+        <!-- <div class="edit-order">
+            <div class="cross_button">
+                <a href="#"><i class="bi bi-x"></i></a>
+            </div>   
+            <div class="main-order bg-dark">
+                <div class="order-info">
+                     <div class="order-head">
+                         <h4><span class="instrument_name">BNF 14FEB CE 42400</span></h4>
+                     </div>
+                     <div class="order-head">
+                         <h4>Margin : <span class="instrument_name">8,000 </span> <span>/</span> <span class="instrument_name">90,000</span></h4>
+                     </div>
+                </div>
+                 <div class="row">
+                     <div class="order-board">
+                         <div class="select_type">
+                             <div class="input-group">
+                                 <span class="input-group-text" id="basic-addon1">LTP</span>
+                                 <input type="text" class="form-control" placeholder="Latest Trade Price">
+                             </div>
+                         </div>
+                         <div class="select_type">
+                             <div class="input-group">
+                                 <span class="input-group-text" id="basic-addon1">QTY</span>
+                                 <input type="number" class="form-control" placeholder="Quantity">
+                             </div>
+                         </div>
+                     </div>                            
+                 </div>
+                 <div class="row">
+                     <div class="order-board">
+                         <div class="select_type">
+                             <select class="form-select" aria-label="Default select example">
+                                 <option selected="">Market</option>
+                                 <option value="1">Limit</option>
+                             </select>
+                         </div>
+                         <div class="select_type">
+                             <select class="form-select" aria-label="Default select example">
+                                 <option selected="">Nrml</option>
+                                 <option value="1">Mis</option>
+                             </select>
+                         </div>
+                     </div>                            
+                 </div>
+                 <div class="order-board">
+                     <div class="select_type">
+                         <button type="button" class="btn btn-success">Buy</button>
+                     </div>
+                     <div class="select_type">
+                         <button type="button" class="btn btn-danger">Sell</button>
+                     </div>
+                 </div>
+             </div>
+        </div> -->
+
+        <!-- mobile-header -->
+        <div class="mobile-header">
+            <ul>
+                <li class="nav-item">
+                    <a aria-current="page" href="index.html">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a href="position.html">Positions</a>
+                </li>
+                <li class="nav-item">
+                    <a href="holdings.html">Holdings</a>
+                </li>
+                <li class="nav-item">
+                    <a href="order.html">Orders</a>
+                </li>
+            </ul>
+        </div>
+
+
+
+        <!-- order panel -->
+        <div class="edit-order d-none" id="orderPanel">
+            <div class="cross_button">
+                <a type="button" onclick="document.getElementById('orderPanel').classList.add('d-none')"><i
+                        class="bi bi-x"></i></a>
+            </div>
+            <div class="main-order bg-dark position-order">
+                <div class="order-info">
+                    <div class="order-head">
+                        <h4><span class="instrument_name" id="optionName">Option Name</span><small></small></h4>
+                    </div>
+                    <div class="order-head">
+                        <h4 id="optionLTP"></h4>
+                    </div>
+                    <div class="order-head">
+                        <h4>Margin : <span class="instrument_name" id="buyMargin">8,000 </span> <span>/</span> <span
+                                class="instrument_name" id="sellMargin">90,000</span></h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="order-board">
+                        <div class="select_type">
+                            <div class="input-group">
+                                <span class="input-group-text" id="basic-addon1">Price</span>
+                                <input type="number" class="form-control" id="optionPrice" placeholder="0"
+                                    onchange="getMargins()" disabled>
+                            </div>
+                        </div>
+                        <div class="select_type">
+                            <div class="input-group">
+                                <span class="input-group-text" id="basic-addon1">QTY</span>
+                                <input type="number" class="form-control" id="optionQty" placeholder="Quantity"
+                                    onchange="getMargins()" disabled>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="order-board">
+                        <div class="select_type">
+                            <select class="form-select" aria-label="Default select example" id="optionOrderType"
+                                onchange="getMargins()" disabled>
+                                <option value="LMT" selected>Limit</option>
+                                <option value="SL-LMT">SL Limit</option>
+                            </select>
+                        </div>
+                        <div class="select_type">
+                            <select class="form-select" aria-label="Default select example" id="optionProductType"
+                                onchange="getMargins()" disabled>
+                                <option value="NRML" selected>Normal</option>
+                                <option value="MIS">Intraday</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-board">
+                    <div class="select_type">
+                        <button type="button" class="btn btn-success" id="optionBuyButton" onclick="exitOrder(this)"
+                            disabled>Buy</button>
+                    </div>
+                    <div class="select_type">
+                        <button type="button" class="btn btn-danger" id="optionSellButton" onclick="exitOrder(this)"
+                            disabled>Sell</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- notification -->
+        <div class="main-notification d-none" id="alert">
+            <div class="cross_button">
+                <a type="button" onclick="document.getElementById('alert').classList.add('d-none')"><i
+                        class="bi bi-x"></i></a>
+            </div>
+            <div class="notification-content">
+                <p id="msg"></p>
+            </div>
+        </div>
+
+
+    </div>
+    <!-- main -->
+
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <!-- bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/websocket.js"></script>
+</body>
+
+</html>
