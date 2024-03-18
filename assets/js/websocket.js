@@ -5,14 +5,14 @@ worker.port.addEventListener("message", function (msg) {
     let result = msg.data;
     let a = msg.data.s;
     document.getElementById('navbarDropdown').style.color =
-        "#D1FFBD";
+        "#157347";
     if (a == 'OK' && a != undefined) {
         let actid = localStorage.getItem('actid');
         sendMessageToSocket(`{"t:o""k:${actid}"}`);
     }
     if (result == 'WS Disconnected') {
         document.getElementById("navbarDropdown").style.color =
-            "#FCD299";
+            "#bb2d3b";
         setTimeout(() => {
             location.reload();
         }, 3000);
