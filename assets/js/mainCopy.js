@@ -67,7 +67,7 @@ async function getInstrument(instrumentToken) {
     };
     let linkedScripts = await shoonyaApi(LinkedScriptsDetail, "GetLinkedScrips");
     document.getElementById("instrumentName").innerHTML = instrumentName;
-    document.getElementById("instrumentToken").classList.add(instrumentToken);
+    document.getElementById("instrumentToken").setAttribute('class', instrumentToken);
     sendMessageToSocket(`{"t":"t","k":"NSE|${instrumentToken}"}`);
     if (linkedScripts.fut.length > 0) { optionSort(linkedScripts.opt_exp); } else {
         alert('No Script');
