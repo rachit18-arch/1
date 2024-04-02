@@ -1287,9 +1287,11 @@ async function limits() {
         actid: localStorage.getItem("actid"),
     };
     let limit = await shoonyaApi(livalues, "Limits");
-    let total = limit.collateral ? parseFloat(limit.cash) + parseFloat(limit.collateral) + parseFloat(limit.unclearedcash) : parseFloat(limit.cash);
+    let total = limit.collateral ? parseFloat(limit.cash) + parseFloat(limit.collateral) + parseFloat(limit.unclearedcash) : parseFloat(limit.cash) + parseFloat(limit.payin) - parseFloat(limit.payout);
     document.getElementById("t").innerHTML = total.toFixed(2);
     document.getElementById("cash").innerHTML = limit.cash ? limit.cash : 0;
+    document.getElementById("payin").innerHTML = limit.payin ? limit.payin : 0;
+    document.getElementById("payout").innerHTML = limit.payout ? limit.payout : 0;
     document.getElementById("pm").innerHTML = limit.peak_mar ? limit.peak_mar : 0;
     document.getElementById("mu").innerHTML = limit.marginused
         ? limit.marginused
