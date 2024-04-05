@@ -801,11 +801,24 @@ async function exitOrderPanel(exitButton) {
         stext: orderRow.childNodes[3].childNodes[0].textContent.slice(0, -4),
     };
     let instrumentSearchInfo = await shoonyaApi(instruementSearchValues, "SearchScrip");
+    function getValue(response, symbol) {
+        // Loop through the values array
+        for (let i = 0; i < response.values.length; i++) {
+            // Check if the symbol matches tsym
+            if (response.values[i].tsym === symbol) {
+                return response.values[i].token;
+            }
+        }
+        return null; // Return null if symbol is not found
+    }
     let instruementInfoValues = {
         uid: localStorage.getItem("uid"),
         exch: orderRow.childNodes[3].childNodes[0].textContent.slice(-3),
         token: instrumentSearchInfo.values[0].token,
     };
+    if (instruementSearchValues.exch == 'BSE') {
+        instruementInfoValues.token = getValue(instrumentSearchInfo, instruementSearchValues.stext)
+    }
     let optionInfo = await shoonyaApi(instruementInfoValues, "GetSecurityInfo");
     document.getElementById("optionName").innerHTML = optionInfo.cname + ' ';
     document.getElementById("optionName").setAttribute("data-tsym", optionInfo.tsym);
