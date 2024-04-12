@@ -597,3 +597,15 @@ input[type="password"] {
     font-size: 30px;
     font-weight: 800;
 }
+
+/* dragg */
+.draggable {
+    /* position: absolute !important; */
+    cursor: move;
+}
+
+
+.draggable .main-order {
+    height: 300px;
+    display: grid;
+}
